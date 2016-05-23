@@ -1,0 +1,32 @@
+package:
+  name: vcomp
+  version: "1.0"
+
+build:
+  number: 0
+  script: copy "%RECIPE_DIR%\\vcomp140.dll" "%LIBRARY_BIN\\vcomp140.dll"  # [win and py35]
+  script: copy "%RECIPE_DIR%\\vcomp100.dll" "%LIBRARY_BIN\\vcomp100.dll"  # [win and py34]
+  script: copy "%RECIPE_DIR%\\vcomp90.dll" "%LIBRARY_BIN\\vcomp90.dll"    # [win and py27]
+  features:
+    - vc9     # [win and py27]
+    - vc10    # [win and py34]
+    - vc14    # [win and py35]
+  skip: True  # [not win]
+
+requirements:
+  build:
+    - python  # [win]
+
+test:
+  requires:
+    - python  # [win]
+
+  commands:
+    - if not exist %PREFIX%\\Library\\bin\\vcomp140.dll exit 1  # [win and py35]
+    - if not exist %PREFIX%\\Library\\bin\\vcomp100.dll exit 1  # [win and py34]
+    - if not exist %PREFIX%\\Library\\bin\\vcomp90.dll exit 1   # [win and py27]
+
+about:
+  home: https://www.visualstudio.com/
+  summary: Temporary solution to missing vcomp libraries on Windows.
+  license: Unknown
