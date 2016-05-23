@@ -4,9 +4,9 @@ package:
 
 build:
   number: 0
-  script: copy "%RECIPE_DIR%\\vcomp140.dll" "%LIBRARY_BIN\\vcomp140.dll"  # [win and py35]
-  script: copy "%RECIPE_DIR%\\vcomp100.dll" "%LIBRARY_BIN\\vcomp100.dll"  # [win and py34]
-  script: copy "%RECIPE_DIR%\\vcomp90.dll" "%LIBRARY_BIN\\vcomp90.dll"    # [win and py27]
+  script: copy "%RECIPE_DIR%\\vcomp140.dll" "%LIBRARY_BIN%\\vcomp140.dll"  # [win and py35]
+  script: copy "%RECIPE_DIR%\\vcomp100.dll" "%LIBRARY_BIN%\\vcomp100.dll"  # [win and py34]
+  script: copy "%RECIPE_DIR%\\vcomp90.dll" "%LIBRARY_BIN%\\vcomp90.dll"    # [win and py27]
   features:
     - vc9     # [win and py27]
     - vc10    # [win and py34]
